@@ -1,4 +1,51 @@
-# Getting Started with Create React App
+# Payroll Calculator
+
+## Form
+
+- Number of years of experience
+- Occupation (3 specific choices)
+  - Programmer
+  - Teacher
+  - Cashier
+- City (2 specific choices)
+  - Stockholm
+  - Gothenburg
+- Income year (2 specific choices)
+  - 2020
+  - 2019
+
+## Conditions of Calculation
+
+**Basic salaries before tax**
+
+- Develoer: SEK 30,000
+- Teacher: SEK 27,000
+- Cashier: SEK 25,000
+
+**Number of experience years**
+
+0-3 years of experience does not give a pay rise
+
+4-7 years of experience gives a salary increase of 20% in addition to basic salary
+
+8-10 years of experience gives a salary increase of 40% in addition to basic salary
+
+11+ years of experience gives a salary increase of 60% in addition to basic salary
+
+**Basic tax rate / Location**
+
+- Stockholm
+  - Income year 2019: 30%
+  - Income year 2020: 29%
+- Gothenburg
+  - Income year 2019: 25%
+  - Income year 2020: 22%
+
+**Extra high-income tax**
+
+If you earn between SEK 36,000 - SEK 45,000, you also pay 50% tax on all salary between SEK 36,000 - 45,000, in addition to the basic tax on the amount of SEK 0 - SEK 36,000
+
+If you earn more than SEK 45,000, you also pay 50% tax on all salary between SEK 36,000 - 45,000 and 70% tax on anything over SEK 45,000, in addition to the basic tax rate of sek 0 - 36,000
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,4 +115,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # PayrollCalculator
