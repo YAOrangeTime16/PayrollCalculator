@@ -1,3 +1,5 @@
+import type {IButtonProps} from "../typings/form"
+
 const buttonClass = `
   bg-gray-800
   hover:bg-gray-700

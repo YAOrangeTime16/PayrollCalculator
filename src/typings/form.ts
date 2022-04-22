@@ -1,7 +1,8 @@
-interface ISelectInputOptioProps {
+
+export interface ISelectInputOptioProps {
   map: ISelectInputOptioPropsMap;
   value: any;
-  onChange?: (event) => {}
+  onChangeMethod?: (event) => void
 }
 
 interface ISelectInputOptioPropsMap {
@@ -9,7 +10,7 @@ interface ISelectInputOptioPropsMap {
   options: string[];
 }
 
-interface IButtonProps {
+export interface IButtonProps {
   map: IButtonPropsMap;
 }
 

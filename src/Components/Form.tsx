@@ -18,10 +18,10 @@ function Form() {
 
   return (
     <form onSubmit={(e) => e.preventDefault() }>
-      <SelectInput value={experienceYear} map={ExperienceOptions} />
-      <SelectInput value={incomeYear} map={YearOptions} />
-      <SelectInput value={occupation} map={OccupationsOptions} />
-      <SelectInput value={city} map={CityOptions} />
+      <SelectInput value={experienceYear} onChangeMethod={e => {setExperienceYear(e.target.value)}} map={ExperienceOptions} />
+      <SelectInput value={incomeYear} onChangeMethod={e => {setIncomeYear(e.target.value)}} map={YearOptions} />
+      <SelectInput value={occupation} onChangeMethod={e => {setOccupation(e.target.value)}} map={OccupationsOptions} />
+      <SelectInput value={city} onChangeMethod={e => {setCity(e.target.value)}} map={CityOptions} />
       <Button map={SubmitButton} />
     </form>
   );
