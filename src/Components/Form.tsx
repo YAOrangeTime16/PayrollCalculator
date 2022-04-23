@@ -16,8 +16,13 @@ function Form() {
   const [occupation, setOccupation] = useState("Developer")
   const [city, setCity] = useState("Stockholm")
 
+  const submit = (e) => {
+    e.preventDefault();
+    console.log(experienceYear)
+  }
+
   return (
-    <form onSubmit={(e) => e.preventDefault() }>
+    <form onSubmit={submit}>
       <SelectInput value={experienceYear} onChangeMethod={e => {setExperienceYear(e.target.value)}} map={ExperienceOptions} />
       <SelectInput value={incomeYear} onChangeMethod={e => {setIncomeYear(e.target.value)}} map={YearOptions} />
       <SelectInput value={occupation} onChangeMethod={e => {setOccupation(e.target.value)}} map={OccupationsOptions} />
