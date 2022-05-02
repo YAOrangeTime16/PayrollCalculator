@@ -1,3 +1,5 @@
+import { ISelectInputOptioPropsMap, IButtonPropsMap } from "../typings/form"
+
 export const YearOptions: ISelectInputOptioPropsMap =
 {
   label: "year",

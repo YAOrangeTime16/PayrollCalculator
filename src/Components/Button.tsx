@@ -16,7 +16,7 @@ function Button({map}:IButtonProps) {
       className={buttonClass}
       type={map.type}
       value={map.label}
-      onClick={() => console.log("call calculation logic")}
+
     />
   )
 }

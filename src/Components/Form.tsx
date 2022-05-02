@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./Button";
 import SelectInput from "./SelectInput";
 import {
@@ -8,9 +8,9 @@ import {
   YearOptions,
   SubmitButton
 } from "../Maps/inputs"
+import { GetGrossSalary, NetSalary } from "../utils"
 
 function Form() {
-
   const [experienceYear, setExperienceYear] = useState("0-3")
   const [incomeYear, setIncomeYear] = useState("2020")
   const [occupation, setOccupation] = useState("Developer")
@@ -18,7 +18,13 @@ function Form() {
 
   const submit = (e) => {
     e.preventDefault();
-    console.log(experienceYear)
+    const grossSalary = GetGrossSalary(occupation, experienceYear);
+    const netSalary = NetSalary(grossSalary, city, incomeYear)
+
+    return {
+      gross: grossSalary,
+      net: netSalary
+    }
   }
 
   return (

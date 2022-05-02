@@ -1,4 +1,4 @@
-import {OCCUPATION, EXPERIENCE} from "../enum/"
+import { OCCUPATION, EXPERIENCE } from "../enum/"
 
 const basicSalary= {
     [OCCUPATION.DEVELOPER]: 30000,
@@ -32,13 +32,14 @@ export const GetGrossSalary = (occupation, experience) => basicSalary[occupation
  * @param location
  * @returns amountOfTax
  */
-export const CalculateTaxAmount = (grossSalary, location) => {
-  const excess = grossSalary - 36000;
+const CalculateTaxAmount = (grossSalary, location, incomeYear) => {
+  const excess = grossSalary < 36000 ? 0 : grossSalary - 36000;
 
-  if (excess < 0) { // Less than SEK36,000
-    return grossSalary * taxLocationMap[location];
+  if (excess === 0) { // Less than SEK36,000
+
+    return grossSalary * taxLocationMap[location][incomeYear];
   } else {
-    const basicTax = 36000 * taxLocationMap[location];
+    const basicTax = 36000 * taxLocationMap[location][incomeYear];
     const excessTax = excess * 0.5;
 
     if (excess <= 9000) { // SEK36,000 - SEK45,000
@@ -53,8 +54,8 @@ export const CalculateTaxAmount = (grossSalary, location) => {
 }
 
 
-export const NetSaraly = (grossAmount, location) => {
-  const tax = CalculateTaxAmount(grossAmount, location)
+export const NetSalary = (grossAmount, location, incomeYear) => {
+  const taxAmount = CalculateTaxAmount(grossAmount, location, incomeYear)
 
-  return grossAmount - (grossAmount * tax);
+  return grossAmount - taxAmount;
 }

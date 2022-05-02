@@ -5,7 +5,7 @@ export interface ISelectInputOptioProps {
   onChangeMethod?: (event) => void
 }
 
-interface ISelectInputOptioPropsMap {
+export interface ISelectInputOptioPropsMap {
   label: string;
   options: string[];
 }
@@ -14,7 +14,7 @@ export interface IButtonProps {
   map: IButtonPropsMap;
 }
 
-interface IButtonPropsMap {
+export interface IButtonPropsMap {
   label: string;
   type: TButtonType;
 }
